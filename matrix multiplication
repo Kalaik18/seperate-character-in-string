@@ -1,1 +1,44 @@
 
+#include <stdio.h>
+
+int main()
+{
+ int i,j,a[10][10],b[20][10],c[10][10],sum=0,arows,acolums,brows,bcolums,k;
+ printf("enter the number of rows and columns in a matrix\n");
+ scanf("%d%d",&arows,&acolums);
+ printf("enter the number of rows and columns in b matrix\n");
+ scanf("%d%d",&brows,&bcolums);
+ for(i=0;i<arows;i++)
+ {
+     for(j=0;j<bcolums;j++)
+     {
+         scanf("%d",&a[i][j]);
+     }
+ }
+ for(i=0;i<brows;i++)
+ {
+     for(j=0;j<bcolums;j++)
+     {
+         scanf("%d",&b[i][j]);
+     }
+ }
+ for(i=0;i<arows;i++)
+ {
+     for(j=0;j<bcolums;j++)
+     {
+         for(k=0;k<acolums;k++)
+         {
+             sum=sum+a[i][k]*b[k][j];
+         }
+         c[i][j]=sum;
+     }
+ }
+ printf("result matrix is:\n");
+ for(i=0;i<arows;i++)
+ {
+     for(j=0;j<bcolums;j++)
+     {
+         printf(" %d",c[i][j]);
+     }
+ }
+}
